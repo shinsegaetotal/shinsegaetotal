@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남양주시 호평동 반사경 전문 시공 | 신세계종합건업</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+        body { background-color: #e2e8f0; display: flex; justify-content: center; }
+        .mobile-wrap { width: 100%; max-width: 480px; background-color: #f8fafc; min-height: 100vh; position: relative; padding-bottom: 80px; overflow-x: hidden; }
+        .header { display: flex; justify-content: center; align-items: center; padding: 18px 20px; background-color: #ffffff; border-bottom: 1px solid #f1f5f9; }
+        .logo { font-size: 22px; font-weight: 800; color: #0f172a; }
+        .logo span { color: #2563eb; }
+        
+        /* 📌 상단 고정 네비게이션 메뉴 */
+        .top-nav { background: white; display: flex; justify-content: space-around; padding: 14px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 1px solid #f1f5f9; }
+        .top-nav a { text-decoration: none; color: #334155; font-size: 15px; font-weight: 800; transition: color 0.2s; }
+        .top-nav a:hover { color: #2563eb; }
+
+        /* 상단 메인 */
+        .hero { background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); color: white; padding: 40px 24px; text-align: center; }
+        .hero-title { font-size: 26px; font-weight: 800; line-height: 1.4; margin-bottom: 16px; word-break: keep-all; }
+        .hero-title span { color: #f97316; }
+        .hero-desc { font-size: 15px; line-height: 1.6; color: #94a3b8; margin-bottom: 24px; }
+        
+        /* 공통 섹션 */
+        .section { padding: 30px 0; background-color: #ffffff; margin-bottom: 10px; }
+        .sec-title { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 16px; padding: 0 24px; }
+        
+        /* 📸 15개 시공 사진 (가로 스크롤 + 설명칸) */
+        .photo-gallery { display: flex; overflow-x: auto; gap: 12px; padding: 0 24px 10px 24px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .photo-gallery::-webkit-scrollbar { display: none; }
+        .photo-item { flex: 0 0 90%; scroll-snap-align: center; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        
+        /* 전/후 사진 반반 나누기 */
+        .before-after-wrap { display: flex; gap: 2px; }
+        .img-box { flex: 1; position: relative; }
+        .img-label { position: absolute; top: 8px; left: 8px; font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 4px; color: white; z-index: 10; }
+        .label-before { background-color: rgba(0, 0, 0, 0.7); }
+        .label-after { background-color: #ef4444; }
+        .photo-item img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background-color: #e2e8f0; }
+        
+        /* 사진 하단 설명 영역 */
+        .photo-text-wrap { padding: 16px; text-align: left; }
+        .photo-title { font-size: 16px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+        .photo-desc { font-size: 14px; color: #475569; line-height: 1.5; word-break: keep-all; }
+        
+        /* 📦 3. 주력 품목 갤러리 스타일 (8개 세팅) */
+        .item-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 24px; }
+        .item-card { background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .item-img { width: 100%; aspect-ratio: 4/3; background-color: #cbd5e1; object-fit: cover; display: block; }
+        .item-name { font-size: 14.5px; font-weight: 800; color: #1e293b; padding: 12px 5px; }
+
+        /* ❓ 4. 자주 묻는 질문(FAQ) 스타일 */
+        .faq-wrap { padding: 0 24px; }
+        .faq-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .faq-title { font-size: 15px; font-weight: 700; color: #0f172a; padding: 16px; cursor: pointer; list-style: none; position: relative; }
+        .faq-title::-webkit-details-marker { display: none; }
+        .faq-title::after { content: "▼"; position: absolute; right: 16px; color: #94a3b8; font-size: 12px; }
+        details[open] .faq-title::after { content: "▲"; }
+        .faq-content { padding: 10px 16px 16px 16px; font-size: 14px; color: #475569; line-height: 1.6; border-top: 1px dashed #e2e8f0; }
+
+        /* 💬 20개 고객 후기 (무한 롤링 슬라이드) */
+        .review-wrap { overflow: hidden; background-color: #f8fafc; padding: 20px 0; border-top: 1px solid #f1f5f9; }
+        .review-track { display: flex; gap: 12px; width: max-content; animation: scrollReviews 30s linear infinite; padding-left: 24px; }
+        .review-card { width: 280px; background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .star { color: #eab308; font-size: 14px; margin-bottom: 8px; }
+        .review-text { font-size: 14.5px; color: #334155; line-height: 1.5; margin-bottom: 10px; white-space: normal; word-break: keep-all; }
+        .review-author { font-size: 12px; color: #94a3b8; font-weight: 600; text-align: right; }
+        
+        @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 6px)); } }
+
+        /* 🔍 검색 키워드 */
+        .keyword-wrap { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px; }
+        .keyword { background-color: #e0e7ff; color: #4338ca; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+        /* 하단 고정 버튼 */
+        .bottom-fixed { position: fixed; bottom: 0; width: 100%; max-width: 480px; padding: 12px 16px; background: white; z-index: 100; box-shadow: 0 -4px 10px rgba(0,0,0,0.05); }
+        .bottom-btn { display: block; background: #f97316; color: white; text-align: center; padding: 16px 0; border-radius: 14px; font-size: 16px; font-weight: 800; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="mobile-wrap">
+    <header class="header"><div class="logo">신세계<span>종합건업</span></div></header>
+
+    <!-- 🎯 상단 고정 네비게이션 메뉴 (클릭 시 이동) -->
+    <div class="top-nav">
+        <a href="#section-intro">업체소개</a>
+        <a href="#section-gallery">시공사례</a>
+        <a href="#section-review">고객후기</a>
+        <a href="#section-keyword">주요업무</a>
+    </div>
+    
+    <!-- 업체소개 섹션 -->
+    <section id="section-intro" class="hero">
+        <h1 class="hero-title"><span>남양주시 호평동</span><br>반사경, 하자 없는 정석 시공으로!</h1>
+        <p class="hero-desc">외주 하청 없는 100% 대표 직접 시공<br>랙보호대,표지판매립,차량진입판,과속방지턱까지</p>
+    </section>
+
+    <!-- 🎯 3대 문의 버튼 시작 -->
+    <div style="text-align: center; margin: 25px 0;">
+        <a href="tel:010-8182-8600" style="display: block; width: 90%; max-width: 400px; margin: 10px auto; padding: 16px; background-color: #2563eb; color: white; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">📞 전화로 빠른 견적 상담</a>
+        
+        <a href="https://open.kakao.com/o/sOHQrcJi" style="display: block; width: 90%; max-width: 400px; margin: 10px auto; padding: 16px; background-color: #FEE500; color: #191919; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">💬 카카오톡 실시간 문의</a>
+        
+        <a href="https://m.blog.naver.com/shinsegaetotal" style="display: block; width: 90%; max-width: 400px; margin: 10px auto; padding: 16px; background-color: #03c75a; color: white; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">📝 공식 시공 블로그 보기</a>
+    </div>
+    <!-- 3대 문의 버튼 끝 -->
+
+    <!-- 🚨 실시간 시공현황 전광판 시작 -->
+    <div style="background-color: #0b0f19; color: #ffffff; padding: 12px 0; font-size: 15px; font-weight: bold; border-top: 1px solid #222; border-bottom: 1px solid #222;">
+        <marquee scrollamount="6">
+            🚨 [예약 완료] 수원시 장안구 파장동 상가 주차장 카스토퍼 교체 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            🚨 [예약 완료] 성남시 분당구 서현동 오피스텔 진입로 스텐볼라드 신규 설치 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            🚨 [예약 완료] 화성시 동탄동 물류창고 하역장 고무경사로 세팅 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            🚧 [작업 중] 안산시 단원구 고잔동 상가 진입로 반사경 설치 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            🚧 [작업 중] 시흥시 배곧동 아파트 단지 내 논슬립패드 전면 교체 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            🚧 [작업 중] 강남구 역삼동 빌딩 주차장 카스토퍼 20개 앙카 작업 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            ✅ [시공 완료] 가평군 청평면 펜션 진입로 안전반사경 시공 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            ✅ [시공 완료] 군포시 산본동 공영주차장 U자형 스텐볼라드 매립 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            ✅ [시공 완료] 용인시 수지구 죽전동 상가 턱 낮춤 고무경사로 마감
+        </marquee>
+    </div>
+    <!-- 실시간 시공현황 전광판 끝 -->
+
+    <!-- 📸 1. 작업 전후 비교 사진 (시공사례 섹션) -->
+    <section id="section-gallery" class="section">
+        <h2 class="sec-title">🛠️ 시공 전/후를 비교해보세요</h2>
+        <div class="photo-gallery">
+            <!-- 현장 1 -->
+            <div class="photo-item">
+                <div class="before-after-wrap">
+                    <div class="img-box"><span class="img-label label-before">시공 전</span><img src="site_1_before.jpg" alt="시공 전"></div>
+                    <div class="img-box"><span class="img-label label-after">시공 후</span><img src="site_1_after.jpg" alt="시공 후"></div>
+                </div>
+                <div class="photo-text-wrap">
+                    <div class="photo-title">📍 현장 1 이름 (예: 안산 상록구 상가)</div>
+                    <div class="photo-desc">현장 1에 대한 자세한 설명을 적어주세요. 어떻게 문제를 해결했고 깔끔하게 시공했는지 적으시면 됩니다.</div>
+                </div>
+            </div>
+            
+            <!-- 현장 2 -->
+            <div class="photo-item">
+                <div class="before-after-wrap">
+                    <div class="img-box"><span class="img-label label-before">시공 전</span><img src="site_2_before.jpg" alt="시공 전"></div>
+                    <div class="img-box"><span class="img-label label-after">시공 후</span><img src="site_2_after.jpg" alt="시공 후"></div>
+                </div>
+                <div class="photo-text-wrap">
+                    <div class="photo-title">📍 현장 2 이름 (예: 인천 남동구 주차장)</div>
+                    <div class="photo-desc">현장 2에 대한 자세한 설명을 적어주세요. 꼼꼼한 마감과 단단한 앙카 작업을 강조해보세요.</div>
+                </div>
+            </div>
+            
+            <!-- 현장 3 -->
+            <div class="photo-item">
+                <div class="before-after-wrap">
+                    <div class="img-box"><span class="img-label label-before">시공 전</span><img src="site_3_before.jpg" alt="시공 전"></div>
+                    <div class="img-box"><span class="img-label label-after">시공 후</span><img src="site_3_after.jpg" alt="시공 후"></div>
+                </div>
+                <div class="photo-text-wrap">
+                    <div class="photo-title">📍 현장 3 이름</div>
+                    <div class="photo-desc">현장 3에 대한 자세한 설명입니다. 고객의 불편함을 어떻게 해결해 주었는지 적어주세요.</div>
+                </div>
+            </div>
+            
+            <!-- (나머지 현장 4~15는 실전에서 대표님이 복사해서 늘려주시면 됩니다!) -->
+        </div>
+        <p style="font-size: 13px; color: #94a3b8; text-align: center; margin-top: 10px;">사진을 옆으로 밀어서 더 많은 현장을 확인하세요 👉</p>
+    </section>
+
+    <!-- 📦 3. 주력 시공 품목 상세 갤러리 (총 8개) -->
+    <section class="section">
+        <h2 class="sec-title">📦 신세계종합건업 주력 시공</h2>
+        <div class="item-grid">
+            <div class="item-card">
+                <img src="item_petdoor.jpg" alt="펫도어" class="item-img">
+                <div class="item-name">펫도어 설치</div>
+            </div>
+            <div class="item-card">
+                <img src="item_wall_mirror.jpg" alt="벽부형반사경" class="item-img">
+                <div class="item-name">벽부형 반사경</div>
+            </div>
+            <div class="item-card">
+                <img src="item_cable_protector.jpg" alt="전선보호덮개" class="item-img">
+                <div class="item-name">전선 보호 덮개</div>
+            </div>
+            <div class="item-card">
+                <img src="item_corner_guard.jpg" alt="기둥코너보호대" class="item-img">
+                <div class="item-name">기둥 코너 보호대</div>
+            </div>
+            <div class="item-card">
+                <img src="item_handrail.jpg" alt="핸드레일" class="item-img">
+                <div class="item-name">안전 핸드레일</div>
+            </div>
+            <div class="item-card">
+                <img src="item_folding_bollard.jpg" alt="접이식주차금지봉" class="item-img">
+                <div class="item-name">접이식 주차금지봉</div>
+            </div>
+            <div class="item-card">
+                <img src="item_steel_guard.jpg" alt="스틸코너가드" class="item-img">
+                <div class="item-name">스틸 코너가드</div>
+            </div>
+            <div class="item-card">
+                <img src="item_stand_descender.jpg" alt="스탠드완강기" class="item-img">
+                <div class="item-name">스탠드 완강기</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ❓ 4. 자주 묻는 질문 (FAQ) -->
+    <section class="section">
+        <h2 class="sec-title">❓ 자주 묻는 질문</h2>
+        <div class="faq-wrap">
+            <details class="faq-item">
+                <summary class="faq-title">Q. 1~2개 소량 설치나 기존 시설물 철거도 가능한가요?</summary>
+                <div class="faq-content">네, 수량에 관계없이 꼼꼼하게 시공해 드립니다. 또한 파손된 기존 시설물 철거부터 폐기물 처리, 신규 교체까지 한 번에 깔끔하게 해결해 드립니다.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-title">Q. 상가 영업시간 외 (야간/주말) 작업도 되나요?</summary>
+                <div class="faq-content">네, 고객님의 영업 및 통행에 방해가 되지 않도록 사전 협의 후 주말 및 야간 작업도 얼마든지 가능합니다.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-title">Q. 세금계산서나 현금영수증 발행이 가능한가요?</summary>
+                <div class="faq-content">네, 신세계종합건업은 정식 등록 업체로 세금계산서 및 현금영수증 발행이 100% 가능합니다. 투명하고 정직하게 견적을 안내해 드립니다.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-title">Q. A/S(사후관리)는 어떻게 되나요?</summary>
+                <div class="faq-content">저희는 하청을 주지 않고 대표가 직접 정밀하게 시공합니다. 만약 시공상 문제가 발생할 경우 책임지고 확실하게 A/S를 보장해 드립니다.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- 💬 20개 고객 후기 (고객후기 섹션) -->
+    <section id="section-review" class="section" style="padding-bottom: 0;">
+        <h2 class="sec-title">💬 고객들이 증명하는 만족도</h2>
+        <div class="review-wrap">
+            <div class="review-track">
+                <!-- 첫 번째 세트 (10개) -->
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"분당 판교 상가 주차장인데, 꼼꼼하게 각도 맞춰서 시공해 주셔서 든든합니다. 마감 처리도 정말 깔끔하네요!"</p><div class="review-author">- 상가 관리소장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"수지 풍덕천동 빌라 단지 매립식 볼라드 시공 맡겼습니다. 일정 칼같이 지켜주시고, 다른 곳보다 훨씬 튼튼하게 박혀있습니다."</p><div class="review-author">- 빌라 입주자 대표님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"인천 남동공단 물류창고 랙보호대 설치했습니다. 지게차 충돌사고 방지용인데 최고입니다."</p><div class="review-author">- 주차장 운영자님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"시흥 식당 앞인데 손님들이 주차하기 너무 편해졌다고 하네요. 견적도 합리적이고 작업도 엄청 빠르십니다."</p><div class="review-author">- 식당 사장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"용인 공장 진입로 스텐볼라드 매립 아주 만족합니다. 외주 안 주고 직접 팀이 오셔서 책임지고 해주시니 믿음이 갑니다."</p><div class="review-author">- 공장장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"견적부터 시공까지 군더더기 없이 깔끔합니다. 다음번에도 무조건 여기로 연락드릴 예정입니다."</p><div class="review-author">- 군포 상가 번영회</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"비 오는 날 작업하셨는데도 끝까지 미소 잃지 않고 튼튼하게 마무리해주셔서 정말 감사합니다."</p><div class="review-author">- 수원 건물주님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"반사경 위치 잡기가 애매했는데 전문가답게 최적의 각도로 잘 설치해주셨습니다."</p><div class="review-author">- 화성 물류센터</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"저가 자재 안 쓰시고 묵직한 정품 카스토퍼로 시공해주셔서 확실히 다르네요."</p><div class="review-author">- 평택 아파트 동대표</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"안전제일 마인드로 작업하시는 모습이 인상적이었습니다. 적극 추천합니다."</p><div class="review-author">- 오산 상가 입점주</div></div>
+                
+                <!-- 두 번째 세트 (무한 롤링용 복사본) -->
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"분당 판교 상가 주차장인데, 꼼꼼하게 각도 맞춰서 시공해 주셔서 든든합니다. 마감 처리도 정말 깔끔하네요!"</p><div class="review-author">- 상가 관리소장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"수지 풍덕천동 빌라 단지 매립식 볼라드 시공 맡겼습니다. 일정 칼같이 지켜주시고, 다른 곳보다 훨씬 튼튼하게 박혀있습니다."</p><div class="review-author">- 빌라 입주자 대표님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"인천 남동공단 물류창고 랙보호대 설치했습니다. 지게차 충돌사고 방지용인데 최고입니다."</p><div class="review-author">- 주차장 운영자님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"시흥 식당 앞인데 손님들이 주차하기 너무 편해졌다고 하네요. 견적도 합리적이고 작업도 엄청 빠르십니다."</p><div class="review-author">- 식당 사장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"용인 공장 진입로 스텐볼라드 매립 아주 만족합니다. 외주 안 주고 직접 팀이 오셔서 책임지고 해주시니 믿음이 갑니다."</p><div class="review-author">- 공장장님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"견적부터 시공까지 군더더기 없이 깔끔합니다. 다음번에도 무조건 여기로 연락드릴 예정입니다."</p><div class="review-author">- 군포 상가 번영회</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"비 오는 날 작업하셨는데도 끝까지 미소 잃지 않고 튼튼하게 마무리해주셔서 정말 감사합니다."</p><div class="review-author">- 수원 건물주님</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"반사경 위치 잡기가 애매했는데 전문가답게 최적의 각도로 잘 설치해주셨습니다."</p><div class="review-author">- 화성 물류센터</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"저가 자재 안 쓰시고 묵직한 정품 카스토퍼로 시공해주셔서 확실히 다르네요."</p><div class="review-author">- 평택 아파트 동대표</div></div>
+                <div class="review-card"><div class="star">⭐⭐⭐⭐⭐</div><p class="review-text">"안전제일 마인드로 작업하시는 모습이 인상적이었습니다. 적극 추천합니다."</p><div class="review-author">- 오산 상가 입점주</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔍 검색 엔진 최적화(SEO) 키워드 뭉치 (주요업무 섹션) -->
+    <section id="section-keyword" class="section">
+        <h2 class="sec-title">📌 취급 품목</h2>
+        <div class="keyword-wrap">
+            <span class="keyword">#남양주시 호평동반사경</span>
+            <span class="keyword">#랙보호대</span>
+            <span class="keyword">#아스콘 부분보수</span>
+            <span class="keyword">#차량진입판</span>
+            <span class="keyword">#과속방지턱</span>
+            <span class="keyword">#표지판 매립</span>
+            <span class="keyword">#무단횡단금지휀스</span>
+            <span class="keyword">#교육/체험용 완강기 제작</span>
+        </div>
+    </section>
+
+    <!-- 하단 고정 버튼 -->
+    <div class="bottom-fixed">
+        <a href="tel:01081828600" class="bottom-btn">📞 남양주시 호평동 빠른 견적 문의하기</a>
+    </div>
+
+</div>
+
+</body>
+</html>
