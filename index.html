@@ -36,6 +36,17 @@
         
         .section { padding: 30px 0; background-color: #ffffff; margin-bottom: 10px; }
         .sec-title { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 16px; padding: 0 24px; }
+
+        /* 볼라드 전문 섹션 스타일 추가 */
+        .bollard-special { background-color: #f0fdf4; border-top: 2px solid #22c55e; border-bottom: 2px solid #22c55e; padding: 30px 0; margin-bottom: 10px; }
+        .bollard-title { font-size: 20px; font-weight: 800; color: #166534; margin-bottom: 12px; padding: 0 24px; display: flex; align-items: center; gap: 6px; }
+        .bollard-subtitle { font-size: 14.5px; color: #334155; line-height: 1.6; padding: 0 24px; margin-bottom: 20px; word-break: keep-all; }
+        .bollard-card-wrap { padding: 0 24px; display: flex; flex-direction: column; gap: 12px; }
+        .bollard-card { background: white; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .bollard-card-title { font-size: 15.5px; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+        .bollard-card-desc { font-size: 13.5px; color: #475569; line-height: 1.6; }
+        .bollard-tag-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .bollard-tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 12.5px; font-weight: 700; color: #334155; }
         
         .photo-gallery { display: flex; overflow-x: auto; gap: 12px; padding: 0 24px 10px 24px; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .photo-gallery::-webkit-scrollbar { display: none; }
@@ -88,9 +99,9 @@
 
     <div class="top-nav">
         <a href="#section-intro">업체소개</a>
+        <a href="#section-bollard">볼라드전문</a>
         <a href="#section-gallery">작업사례</a>
         <a href="#section-review">고객후기</a>
-        <a href="#section-keyword">시공항목</a>
     </div>
     
     <section id="section-intro" class="hero">
@@ -117,6 +128,41 @@
             ✅ [시공 완료] 용인시 수지구 죽전동 상가 경계석 단차 턱 낮춤 차량진입판 신규 설치
         </marquee>
     </div>
+
+    <!-- 🌟 새롭게 추가된 볼라드 주력 전문 섹션 -->
+    <section id="section-bollard" class="bollard-special">
+        <h2 class="bollard-title">🚧 [주력 시공] 볼라드 맞춤 컨설팅</h2>
+        <div class="bollard-subtitle">차량 진입 방지 및 보행자 안전을 위한 <b>볼라드(단속대)</b>. 현장 상황과 목적에 맞춰 <b>가장 확실한 자재와 시공법</b>을 제안해 드립니다.</div>
+        
+        <div class="bollard-card-wrap">
+            <div class="bollard-card">
+                <h3 class="bollard-card-title">1️⃣ 재질 및 형태 맞춤 제작</h3>
+                <p class="bollard-card-desc">
+                    ▪ <b>재질:</b> 스틸(분체도장) / 스텐(STS304 부식방지)<br>
+                    ▪ <b>형태:</b> 일자형(I자형) / U자형 / 코너형
+                </p>
+            </div>
+            
+            <div class="bollard-card">
+                <h3 class="bollard-card-title">2️⃣ 현장 맞춤형 시공 방식</h3>
+                <p class="bollard-card-desc">바닥 컨디션(아스콘, 흙, 콘크리트) 및 차량 통행 여부에 따라 최적의 방식을 적용합니다.</p>
+                <div class="bollard-tag-wrap">
+                    <span class="bollard-tag">고정 매립식</span>
+                    <span class="bollard-tag">매립 이동식(자물쇠)</span>
+                    <span class="bollard-tag">고정 앙카식</span>
+                    <span class="bollard-tag">앙카 이동식</span>
+                </div>
+            </div>
+
+            <div class="bollard-card">
+                <h3 class="bollard-card-title">3️⃣ 특수 목적 볼라드</h3>
+                <p class="bollard-card-desc">
+                    ▪ <b>우레탄 볼라드:</b> 보행자 충돌 시 충격을 흡수하여 부상을 방지하는 특수 우레탄 커버 장착<br>
+                    ▪ <b>탄성(오뚜기) 볼라드:</b> 차량과 충돌 시 파손되지 않고 꺾였다가 오뚜기처럼 원래대로 복원되는 고탄성 재질
+                </p>
+            </div>
+        </div>
+    </section>
 
     <section id="section-gallery" class="section">
         <h2 class="sec-title">🛠️ 시공 전/후를 비교해보세요</h2>
@@ -305,9 +351,19 @@
     </section>
 
     <section class="section">
-        <h2 class="sec-title">📦 신세계종합건업 시공 항목 (총 18종)</h2>
+        <h2 class="sec-title">📦 신세계종합건업 시공 항목 (총 20종)</h2>
         <div class="item-grid">
-            <!-- 기존 아이템 8개 유지 -->
+            <!-- 🌟 새롭게 1번째 줄로 올라온 강력 추천 아이템 2개 -->
+            <div class="item-card">
+                <img src="item_bollard.jpg" alt="볼라드" class="item-img">
+                <div class="item-name">볼라드</div>
+            </div>
+            <div class="item-card">
+                <img src="item_non_slip_pad.jpg" alt="논슬립패드" class="item-img">
+                <div class="item-name">논슬립패드</div>
+            </div>
+
+            <!-- 기존 1번째 줄에서 2번째 줄로 이동 -->
             <div class="item-card">
                 <img src="item_petdoor.jpg" alt="펫도어" class="item-img">
                 <div class="item-name">펫도어</div>
@@ -316,6 +372,8 @@
                 <img src="item_wall_mirror.jpg" alt="반사경" class="item-img">
                 <div class="item-name">반사경</div>
             </div>
+
+            <!-- 나머지 16개 아이템 그대로 유지 -->
             <div class="item-card">
                 <img src="item_cable_protector.jpg" alt="전선 보호 덮개" class="item-img">
                 <div class="item-name">전선보호덮개</div>
@@ -340,8 +398,6 @@
                 <img src="item_stand_descender.jpg" alt="체험/교육용 완강기 제작" class="item-img">
                 <div class="item-name">체험/교육용 완강기 제작</div>
             </div>
-            
-            <!-- 신규 아이템 10개 추가 -->
             <div class="item-card">
                 <img src="item_lane_bollard.jpg" alt="차선규제봉" class="item-img">
                 <div class="item-name">차선규제봉</div>
@@ -388,6 +444,14 @@
     <section class="section">
         <h2 class="sec-title">❓ 자주 묻는 질문</h2>
         <div class="faq-wrap">
+            <details class="faq-item">
+                <summary class="faq-title">Q. 견적 문의는 어떻게 하는 것이 가장 빠른가요?</summary>
+                <div class="faq-content">시공할 위치의 <b>'현장 사진'</b>과 대략적인 <b>'수량'</b>, <b>'지역'</b>을 문자로 먼저 보내주시면, 가장 빠르고 정확한 견적을 받아보실 수 있습니다.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-title">Q. 볼라드 사이즈와 반사지 추가 같은 주문제작도 가능한가요?</summary>
+                <div class="faq-content">네! 원하시는 사이즈 및 기타 사항을 말씀해주시면 공장에 의뢰하여 1개도 제작이 가능합니다. 강한 충격과 오랜 비바람에도 끄떡없는 <b>검증된 100% 고품질/국산 자재</b>만을 고집합니다.</div>
+            </details>
             <details class="faq-item">
                 <summary class="faq-title">Q. 1~2개 소량 설치나 기존 시설물 철거도 가능한가요?</summary>
                 <div class="faq-content">네, 수량에 관계없이 꼼꼼하게 시공해 드립니다. 또한 파손된 기존 시설물 철거부터 폐기물 처리, 신규 교체까지 한 번에 깔끔하게 해결해 드립니다.</div>
@@ -442,6 +506,7 @@
         <h2 class="sec-title">📌 시공 항목</h2>
         <div class="keyword-wrap">
             <span class="keyword">#주차안전시설물시공전문업체</span>
+            <span class="keyword">#볼라드</span>
             <span class="keyword">#펫도어</span>
             <span class="keyword">#핸드레일</span>
             <span class="keyword">#스틸코너가드</span>
@@ -466,4 +531,4 @@
 </div>
 
 </body>
-</html> 
+</html>
