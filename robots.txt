@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shinsegaetotal.github.io/sitemap.xml
