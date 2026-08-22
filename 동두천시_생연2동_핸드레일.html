@@ -646,11 +646,24 @@
         <a href="tel:01081828600" class="bottom-btn">📞 빠른 견적 문의</a>
     </div>
 
-</div>
+    <!-- 🌟 푸터(사업자정보)를 </div> 상자 안으로 쏙 올렸습니다 🌟 -->
+    <footer style="text-align: center; padding: 20px 0 40px 0; color: #94a3b8; font-size: 13px;">
+        <p>신세계종합건업 | 대표: 김상윤 | 사업자번호: 306-50-07930</p>
+    </footer>
 
-<footer>
-    <p>신세계종합건업 | 대표: 김상윤 | 사업자번호: 306-50-07930</p>
-</footer>
+</div> <!-- 메인 상자가 여기서 완벽하게 닫힙니다 -->
+
+<!-- ▼ 하단 고정 바 (모바일용 스타일 추가) ▼ -->
+<style>
+    .mobile-bottom-bar { display: none; }
+    @media (max-width: 480px) {
+        .mobile-bottom-bar { display: flex; position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; z-index: 1000; }
+        .mobile-bottom-bar .bottom-btn { flex: 1; padding: 14px 0; text-align: center; font-size: 15px; font-weight: 700; color: white; text-decoration: none; border-radius: 0; }
+        .btn-phone { background-color: #3b82f6; }
+        .btn-kakao { background-color: #facc15; color: #333 !important; }
+        .btn-photo { background-color: #22c55e; }
+    }
+</style>
 
 <div class="mobile-bottom-bar">
     <a href="tel:010-8182-8600" class="bottom-btn btn-phone">📞 전화</a>
