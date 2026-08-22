@@ -1,5 +1,4 @@
-
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +6,8 @@
     <!-- 구글/네이버 소유권 확인 태그 -->
     <meta name="google-site-verification" content="I5aNz63T5xIMtsT-JKgR1Rw5q_U_cOUDbWrBmOflOHo" />
     <meta name="naver-site-verification" content="757c79413436201232bda2d6942f56d0c2ef7699" />
-    <!-- 👇 1. 검색 결과 설명 (메타 디스크립션) 수정: 시뮬레이션 문구 적용 -->
+    
+    <!-- 👇 1. 검색 결과 설명 (메타 디스크립션) -->
     <meta name="description" content="보령시 명천동 전 지역, 외주 없는 대표 직접 시공으로 튼튼하고 안전한 충격흡수탱크 설치를 완벽하게 책임집니다. 소량 파손 교체도 가능합니다. 고객 신뢰를 최우선으로 생각하는 신세계 종합건업에서 경험해보세요.">
     
     <!-- 🎁 카카오톡/SNS 공유 시 나타나는 미리보기 명함 (OG 태그 - main_photo.jpg 완벽 적용!) -->
@@ -17,7 +17,7 @@
     <meta property="og:image" content="https://shinsegaetotal.github.io/main_photo.jpg">
     <meta property="og:url" content="https://shinsegaetotal.github.io/">
 
-    <!-- 👇 2. 검색 결과 제목 (타이틀) 수정: 완벽한 타겟팅 -->
+    <!-- 👇 2. 검색 결과 제목 (타이틀) -->
     <title>보령시 명천동 충격흡수탱크 설치 전문 | 신세계 종합건업</title>
     
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
@@ -38,21 +38,6 @@
             -webkit-text-stroke: 0.8px #1d4ed8; 
         }
 
-        /* 👇 아까 실수로 지워졌거나 꼬였던 메뉴바 복구 코드! */
-        .top-nav { background: white; display: flex; justify-content: space-around; padding: 14px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 1px solid #f1f5f9; }
-        .top-nav a { text-decoration: none; color: #334155; font-size: 15px; font-weight: 800; transition: color 0.2s; }
-        .top-nav a:hover { color: #2563eb; }
-            
-            /* 진한 흑색 -> 신뢰의 블루 그라데이션 */
-            background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            /* 💡 핵심: 글씨 테두리에 같은 톤의 파란색을 칠해 물리적으로 글씨를 더 두껍게 만듦 */
-            -webkit-text-stroke: 0.8px #1d4ed8; 
-        }
-        }
-        
         .top-nav { background: white; display: flex; justify-content: space-around; padding: 14px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 1px solid #f1f5f9; }
         .top-nav a { text-decoration: none; color: #334155; font-size: 15px; font-weight: 800; transition: color 0.2s; }
         .top-nav a:hover { color: #2563eb; }
@@ -118,6 +103,16 @@
 
         .bottom-fixed { position: fixed; bottom: 0; width: 100%; max-width: 480px; padding: 12px 16px; background: white; z-index: 100; box-shadow: 0 -4px 10px rgba(0,0,0,0.05); }
         .bottom-btn { display: block; background: #f97316; color: white; text-align: center; padding: 16px 0; border-radius: 14px; font-size: 16px; font-weight: 800; text-decoration: none; }
+        
+        .mobile-bottom-bar { display: none; }
+        @media (max-width: 480px) {
+            .bottom-fixed { display: none; }
+            .mobile-bottom-bar { display: flex; position: fixed; bottom: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; z-index: 1000; }
+            .mobile-bottom-bar .bottom-btn { flex: 1; padding: 14px 0; text-align: center; font-size: 15px; font-weight: 700; color: white; text-decoration: none; border-radius: 0; }
+            .btn-phone { background-color: #3b82f6; }
+            .btn-kakao { background-color: #facc15; color: #333 !important; }
+            .btn-photo { background-color: #22c55e; }
+        }
     </style>
 </head>
 <body>
@@ -133,6 +128,7 @@
     </div>
     
     <section id="section-intro" class="hero">
+        <!-- 👇 3. 본문 메인 글씨 (타겟팅 셋팅 완료!) -->
         <h1 class="hero-title"><span>보령시 명천동</span><br>충격흡수탱크 전문 시공<br>확실하게 책임집니다!</h1>
         <p class="hero-desc">신세계종합건업은 하청 없는 대표 직접 시공으로<br>합리적인 견적과 완벽한 마감을 보장합니다.</p>
     </section>
@@ -588,7 +584,7 @@
             <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"정자동 빌딩 지상주차장 카스토퍼 전체 교체했습니다. 기존 파손된 거 깔끔하게 철거하고 라인 맞춰서 칼같이 시공해 주셨어요."</p><div class="review-author">- 분당 정자동 관리소장님</div></div>
             <div class="review-card"><div class="star-rating">★★★★<span class="star-half-container">★<span class="star-half-filled">★</span></span></div><p class="review-text">"안양 지식산업센터 지하주차장 코너 보호대 시공했습니다. 색상도 눈에 잘 띄고 마감도 훌륭한데, 작업 소음이 조금 컸던 점 빼고는 다 만족합니다."</p><div class="review-author">- 안양 지식산업센터 운영위</div></div>
             <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"청주 빌라 단지 체인식 스텐 볼라드 시공 맡겼습니다. 일정 약속 철저하게 지켜주시고, 흔들림 없이 튼튼하게 박혀있습니다."</p><div class="review-author">- 청주 빌라 입주자 대표님</div></div>
-            <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"시흥 식당 앞 주차장에 카스토퍼랑 반사경 같이 진행했는데 손님들이 주차하기 너무 편해졌다고 하네요. 견적도 합리적입니다."</p><div class="review-author">- 시흥 식당 사장님</div></div>
+            <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"시흥 식당 앞 주차장에 카스토퍼랑 반사경 같이 진행했는데 손님들이 주차하기 너무 편해졌다고 하네요. 견적도 합리적닙니다."</p><div class="review-author">- 시흥 식당 사장님</div></div>
             <div class="review-card"><div class="star-rating">★★★★<span class="star-half-container">★<span class="star-half-filled">★</span></span></div><p class="review-text">"성남 창고형 매장에 스텐볼라드 시공했습니다. 바닥 수평이 안 맞아서 고생하셨는데 끝까지 맞춰주시는 책임감에 감동했습니다."</p><div class="review-author">- 성남 창고형 매장 점주님</div></div>
             <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"논슬립패드 시공 견적부터 시공까지 군더더기 없이 깔끔합니다. 다음번 다른 지점 오픈할 때도 무조건 여기로 연락드릴 예정입니다."</p><div class="review-author">- 군포 프랜차이즈 본사시공팀</div></div>
             <div class="review-card"><div class="star-rating">★★★★★</div><p class="review-text">"안전제일 마인드로 작업하시는 모습이 인상적이었습니다. 과속방지턱 설치 시 주변 통제도 잘해주시고 적극 추천합니다."</p><div class="review-author">- 오산 상가 관리사무소장님</div></div>
@@ -652,23 +648,15 @@
 
 </div>
 
-<!-- 기존 홈페이지의 맨 아래 내용들... -->
-        <footer>
-            <p>신세계종합건업 | 대표: OOO | 사업자번호: 000-00-00000</p>
-        </footer>
+<footer>
+    <p>신세계종합건업 | 대표: 김상윤 | 사업자번호: 306-50-07930</p>
+</footer>
 
-        <!-- ▼▼ 여기서부터 복사한 코드를 붙여넣으세요 ▼▼ -->
-        <style>
-            .mobile-bottom-bar { display: none; }
-            /* ... (중략) ... */
-        </style>
-
-        <div class="mobile-bottom-bar">
-            <a href="tel:010-8182-8600" class="bottom-btn btn-phone">📞 전화</a>
-            <a href="http://pf.kakao.com/_KcxdGX" target="_blank" class="bottom-btn btn-kakao">💬 카톡</a>
-            <a href="sms:010-8182-8600?body=안녕하세요, 현장 사진을 첨부합니다. 견적 부탁드립니다." class="bottom-btn btn-photo">📸 사진 보내고 견적받기</a>
-        </div>
-        <!-- ▲▲ 여기까지 ▲▲ -->
+<div class="mobile-bottom-bar">
+    <a href="tel:010-8182-8600" class="bottom-btn btn-phone">📞 전화</a>
+    <a href="http://pf.kakao.com/_KcxdGX" target="_blank" class="bottom-btn btn-kakao">💬 카톡</a>
+    <a href="sms:010-8182-8600?body=안녕하세요, 현장 사진을 첨부합니다. 견적 부탁드립니다." class="bottom-btn btn-photo">📸 사진 보내고 견적받기</a>
+</div>
 
 </body>
 </html>
